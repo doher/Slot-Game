@@ -1,0 +1,25 @@
+{
+  "name": "Slot-Game",
+  "version": "1.0.0",
+  "description": "Slot machine prototype",
+  "main": "index.js",
+  "dependencies": {
+    "pixi.js": "^4.8.7",
+    "typescript": "^3.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doher/Slot-Game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doher/Slot-Game/issues"
+  },
+  "homepage": "https://github.com/doher/Slot-Game#readme"
+}

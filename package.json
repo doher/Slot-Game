@@ -4,12 +4,20 @@
   "description": "Slot machine prototype",
   "main": "index.js",
   "dependencies": {
+    "howler": "^2.1.1",
     "pixi.js": "^4.8.7",
     "typescript": "^3.4.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/howler": "^2.1.0",
+    "@types/pixi.js": "^4.8.7",
+    "browserify": "latest",
+    "watchify": "^3.11.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-js": "browserify ./src/js/main.js > ./src/js/index.js",
+    "watch-js": "watchify ./src/js/main.js -o ./src/js/index.js -v"
   },
   "repository": {
     "type": "git",

@@ -57,6 +57,7 @@ export class Reel extends PIXI.Container {
     }
 
     public spin(): void {
+
         this.time = 0;
         this.spinning = true;
 

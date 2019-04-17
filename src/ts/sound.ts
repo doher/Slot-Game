@@ -8,11 +8,11 @@ export class Sound {
     constructor() {
         // Setup the new Howl.
         this.reelSpinSound = new Howl({
-            src: ['./src/assets/sounds/Reel_Spin.mp3']
+            src: ['assets/sounds/Reel_Spin.mp3']
         });
 
         this.landingSound = new Howl({
-            src: ['./src/assets/sounds/Landing_1.mp3']
+            src: ['assets/sounds/Landing_1.mp3']
         });
     }
 

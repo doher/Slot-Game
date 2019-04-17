@@ -4,6 +4,7 @@
   "description": "Slot machine prototype",
   "main": "index.js",
   "dependencies": {
+    "cross-env": "^5.2.0",
     "gh-pages": "^2.0.1",
     "howler": "^2.1.1",
     "parcel-bundler": "^1.12.3",
@@ -19,7 +20,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-js": "browserify ./src/js/main.js > ./src/js/index.js",
-    "watch-js": "watchify ./src/js/main.js -o ./src/js/index.js -v"
+    "watch-js": "watchify ./src/js/main.js -o ./src/js/index.js -v",
+    "start": "parcel serve src/index.html",
+    "build": "cross-env NODE_ENV=production parcel build src/index.html --public-url .",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",

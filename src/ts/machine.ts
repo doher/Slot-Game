@@ -1,5 +1,7 @@
 import * as PIXI from "pixi.js";
 import { Reel } from "./reel";
+import { Button } from "./button";
+import { Sound } from "./sound";
 import { default as data } from "./data";
 
 export class Machine extends PIXI.Container {
@@ -7,17 +9,21 @@ export class Machine extends PIXI.Container {
     private reels: Reel[];
     private currentReel: number;
     private sprite: PIXI.Sprite;
+    private button: Button;
+    private numberOfReels: number;
+    private sound: Sound;
 
     constructor(width: number, height: number, numberOfReels: number = 5) {
         super();
 
+        this.numberOfReels = numberOfReels;
         this.drawBorder();
 
         // add reels
         this.reels = [];
-        const slicedWidth: number = width / numberOfReels;
+        const slicedWidth: number = width / this.numberOfReels;
 
-        for (let i: number = 0; i < numberOfReels; i++) {
+        for (let i: number = 0; i < this.numberOfReels; i++) {
             const reel: Reel = new Reel(slicedWidth, height, i);
 
             reel.position.set(slicedWidth * i, 0);
@@ -25,6 +31,9 @@ export class Machine extends PIXI.Container {
             this.reels.push(reel);
             reel.on("spincomplete", this.onReelSpinComplete.bind(this));
         }
+
+        // add sound
+        this.sound = new Sound();
     }
 
     public spinReels(): void {
@@ -36,7 +45,9 @@ export class Machine extends PIXI.Container {
             setTimeout(reel.spin.bind(reel), timeout);
         }
 
-        setTimeout(this.stopReels.bind(this), 1500);
+        setTimeout(this.stopReels.bind(this), 2500);
+
+        this.sound.playReelSpinSound();
     }
 
     public stopReels(): void {
@@ -58,9 +69,16 @@ export class Machine extends PIXI.Container {
             // stop the next
             this.reels[this.currentReel].stop();
         }
+
+        this.sound.playLandingSound();
+
+        if (this.currentReel === this.numberOfReels) {
+            this.changeStatusButton();
+            this.sound.stopReelSpinSound();
+        }
     }
 
-    private drawBorder() {
+    private drawBorder(): void {
         // verify if already have texture
         if (data.border.texture === null) {
             data.border.texture = PIXI.Texture.fromImage(data.border.filename);
@@ -73,5 +91,14 @@ export class Machine extends PIXI.Container {
         this.sprite.x = -55;
         this.sprite.texture = data.border.texture;
         this.addChild(this.sprite);
+    }
+
+    public getButton(button: Button): void {
+        this.button = button;
+    }
+
+    public changeStatusButton(): void {
+        this.button.isEnabled = !this.button.isEnabled;
+        this.button.setButtonState(2);
     }
 }

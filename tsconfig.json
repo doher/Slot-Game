@@ -1,0 +1,21 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es5",
+    "removeComments": true,
+    "outDir": "./src/js",
+    "sourceMap": true,
+    "noImplicitAny": true
+  },
+  "files": [
+    "./src/ts/button.ts",
+    "./src/ts/data.ts",
+    "./src/ts/game.ts",
+    "./src/ts/machine.ts",
+    "./src/ts/main.ts",
+    "./src/ts/reel.ts",
+    "./src/ts/scene.ts",
+    "./src/ts/sound.ts",
+    "./src/ts/tile.ts"
+  ]
+}

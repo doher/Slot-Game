@@ -16,7 +16,7 @@ export class Tile extends PIXI.Container {
         this.tileWidth = width;
         this.tileHeight = height;
 
-        // adds sprite
+        // add sprite
         this.sprite = new PIXI.Sprite();
         this.sprite.scale.set(1, 1);
         this.sprite.anchor.set(0.5, 0.5);

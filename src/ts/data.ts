@@ -1,11 +1,11 @@
 export default {
     symbols: [
         {
-            filename: "src/assets/img/symbols/01.png",
+            filename: "assets/img/symbols/01.png",
             texture: null,
         },
         {
-            filename: "./assets/img/symbols/02.png",
+            filename: "assets/img/symbols/02.png",
             texture: null,
         },
         {

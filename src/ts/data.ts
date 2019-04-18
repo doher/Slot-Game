@@ -1,7 +1,7 @@
 export default {
     symbols: [
         {
-            filename: "./Slot-Game/src/assets/img/symbols/01.png",
+            filename: "src/assets/img/symbols/01.png",
             texture: null,
         },
         {

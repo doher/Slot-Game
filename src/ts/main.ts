@@ -44,14 +44,4 @@ class Main extends PIXI.Application {
 
 window.onload = () => {
     const main: Main = new Main();
-
-    // let sound = new Howl({
-    //     src: ['./assets/sounds/Reel_Spin.mp3'],
-    //     autoplay: true,
-    //     loop: true,
-    //     volume: 0.5,
-    //     onend: function () {
-    //         console.log('Finished!');
-    //     }
-    // });
 };

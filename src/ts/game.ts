@@ -57,7 +57,7 @@ export class GameScene extends Scene {
     protected preload(): void {
         PIXI.loader
             .add([
-                "./src/assets/img/symbols/01.png",
+                "./Slot-Game/src/assets/img/symbols/01.png",
                 "./assets/img/symbols/02.png",
                 "assets/img/symbols/03.png",
                 "assets/img/symbols/04.png",
